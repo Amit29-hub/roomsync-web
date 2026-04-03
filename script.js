@@ -1,3 +1,3 @@
 function showMessage() {
-    alert("Welcome to RoomSync! More features coming soon.");
+    alert("Welcome to RoomSync! More features will be added soon.");
 }
