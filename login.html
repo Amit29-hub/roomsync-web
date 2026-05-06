@@ -4,30 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - RoomSync</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body class="form-page">
 
     <nav>
         <h2>RoomSync</h2>
+
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="login.html">Login</a></li>
+            <li><a href="about.html">About</a></li>
             <li><a href="register.html">Register</a></li>
+            <li><a href="login.html">Login</a></li>
             <li><a href="search.html">Search</a></li>
         </ul>
     </nav>
 
-    <div class="form-container">
-        <div class="form-card">
-            <h1>Login</h1>
-            <form>
-                <input type="text" placeholder="Username" required>
-                <input type="password" placeholder="Password" required>
+    <main class="form-container">
+        <section class="form-card">
+            <h1>Welcome Back</h1>
+
+            <p class="form-intro">
+                Log in to continue searching for compatible roommates.
+            </p>
+
+            <form onsubmit="return loginMessage()">
+                <label for="username">Username or Email</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username or email" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
                 <button type="submit">Login</button>
             </form>
-        </div>
-    </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 RoomSync. Built for educational purposes.</p>
+    </footer>
 
 </body>
 </html>
