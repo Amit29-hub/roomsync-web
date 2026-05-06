@@ -40,18 +40,27 @@ function registerUser() {
 }
 
 function loginUser() {
+
     let username = document.getElementById("username").value;
+
     let password = document.getElementById("password").value;
 
-    if (username === "" || password === "") {
-        alert("Please enter your login information.");
-        return false;
+    let savedUsername = localStorage.getItem("roomSyncUsername");
+
+    let savedPassword = localStorage.getItem("roomSyncPassword");
+
+    if (username === savedUsername && password === savedPassword) {
+
+        localStorage.setItem("roomSyncLoggedIn", "true");
+
+        alert("Login successful!");
+
+        window.location.href = "dashboard.html";
+
+    } else {
+
+        alert("Incorrect username or password.");
     }
-
-    localStorage.setItem("roomSyncLoggedIn", "true");
-
-    alert("Login successful! Welcome back to RoomSync.");
-    window.location.href = "dashboard.html";
 
     return false;
 }
