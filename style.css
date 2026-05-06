@@ -341,3 +341,10 @@ footer {
 
     margin-bottom: 15px;
 }
+
+
+
+function loginMessage() {
+    alert("Login feature is in progress. This form currently demonstrates front-end validation.");
+    return false;
+}
