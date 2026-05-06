@@ -1,113 +1,194 @@
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    margin: 0;
     font-family: Arial, sans-serif;
     background-color: #f4f7fb;
     color: #222;
+    line-height: 1.6;
 }
+
+/* NAVIGATION */
 
 nav {
     background-color: #2f6f4f;
     color: white;
-    padding: 15px 30px;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    padding: 18px 40px;
+
     flex-wrap: wrap;
 }
 
 nav h2 {
-    margin: 0;
-    font-size: 24px;
+    font-size: 28px;
 }
 
 nav ul {
     list-style: none;
+
     display: flex;
     gap: 20px;
-    padding: 0;
-    margin: 10px 0 0 0;
+
+    flex-wrap: wrap;
 }
 
 nav ul li a {
     text-decoration: none;
     color: white;
     font-weight: bold;
+
+    transition: 0.3s;
 }
 
 nav ul li a:hover {
-    text-decoration: underline;
+    color: #d9f5e5;
 }
 
+/* HERO SECTION */
+
 .hero {
+    min-height: 80vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     text-align: center;
-    padding: 80px 20px;
+
+    padding: 40px 20px;
+}
+
+.hero-text {
+    max-width: 700px;
 }
 
 .hero h1 {
-    font-size: 42px;
-    margin-bottom: 10px;
+    font-size: 52px;
+    margin-bottom: 20px;
+
+    color: #2f6f4f;
 }
 
 .hero p {
-    font-size: 18px;
+    font-size: 20px;
     color: #555;
-    margin-bottom: 25px;
+
+    margin-bottom: 30px;
 }
 
 button {
     background-color: #2f6f4f;
     color: white;
+
     border: none;
-    padding: 12px 22px;
-    border-radius: 8px;
-    cursor: pointer;
+
+    padding: 14px 26px;
+
+    border-radius: 10px;
+
     font-size: 16px;
+    cursor: pointer;
+
+    transition: 0.3s;
 }
 
 button:hover {
     background-color: #25563d;
 }
 
+/* FEATURES */
+
+.features {
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+    gap: 25px;
+
+    padding: 60px 40px;
+}
+
+.feature-card {
+    background-color: white;
+
+    padding: 30px;
+
+    border-radius: 14px;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+
+    transition: 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-card h3 {
+    margin-bottom: 15px;
+
+    color: #2f6f4f;
+}
+
+/* FORMS */
+
 .form-page {
     min-height: 100vh;
+
     display: flex;
     flex-direction: column;
 }
 
 .form-container {
     flex: 1;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
     padding: 40px 20px;
 }
 
 .form-card {
     background-color: white;
+
     width: 100%;
     max-width: 420px;
+
     padding: 35px;
+
     border-radius: 14px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
 }
 
 .form-card h1 {
     text-align: center;
-    margin-top: 0;
+
     margin-bottom: 25px;
+
     color: #2f6f4f;
 }
 
-.form-card input {
+.form-card input,
+.form-card select {
     width: 100%;
+
     padding: 12px;
+
     margin-bottom: 15px;
+
     border: 1px solid #ccc;
+
     border-radius: 8px;
+
     font-size: 15px;
 }
 
@@ -115,37 +196,93 @@ button:hover {
     width: 100%;
 }
 
-.search-box {
+/* SEARCH PAGE */
+
+.search-section {
+    padding: 60px 20px;
+
     text-align: center;
-    padding: 80px 20px;
 }
 
-.search-box input {
+.search-bar {
+    margin-bottom: 40px;
+}
+
+.search-bar input {
     width: 100%;
-    max-width: 350px;
-    padding: 12px;
-    border: 1px solid #ccc;
+    max-width: 400px;
+
+    padding: 14px;
+
     border-radius: 8px;
-    margin-bottom: 15px;
-    font-size: 15px;
+
+    border: 1px solid #ccc;
 }
 
-@media (max-width: 600px) {
+.roommate-grid {
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+    gap: 25px;
+
+    margin-top: 30px;
+}
+
+.roommate-card {
+    background-color: white;
+
+    padding: 25px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.roommate-card h3 {
+    color: #2f6f4f;
+
+    margin-bottom: 10px;
+}
+
+/* FOOTER */
+
+footer {
+    background-color: #2f6f4f;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 18px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+
     nav {
         flex-direction: column;
+
         text-align: center;
     }
 
     nav ul {
+        margin-top: 15px;
+
         justify-content: center;
-        flex-wrap: wrap;
     }
 
     .hero h1 {
-        font-size: 32px;
+        font-size: 38px;
     }
 
-    .form-card {
-        padding: 25px;
+    .hero p {
+        font-size: 18px;
     }
+
+    .features {
+        padding: 40px 20px;
+    }
+
 }
