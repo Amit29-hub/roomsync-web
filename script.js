@@ -134,5 +134,9 @@ function updateHomePage() {
                 "<button onclick=\"window.location.href='search.html'\">Search Roommates</button>" +
                 "<button onclick=\"window.location.href='dashboard.html'\">Go to Dashboard</button>" +
             "</div>";
+
+        document.getElementById("memberSection").style.display = "block";
+    }
+}
     }
 }
