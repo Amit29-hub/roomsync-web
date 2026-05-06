@@ -11,7 +11,15 @@ function registerUser() {
     let username = document.getElementById("newUsername").value;
     let password = document.getElementById("newPassword").value;
 
-    if (name === "" || email === "" || budget === "" || cleanliness === "" || schedule === "") {
+    if (
+    name === "" ||
+    email === "" ||
+    username === "" ||
+    password === "" ||
+    budget === "" ||
+    cleanliness === "" ||
+    schedule === ""
+) {
         alert("Please complete all fields.");
         return false;
     }
