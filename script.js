@@ -3,6 +3,17 @@ function showMessage() {
 }
 
 
+function loginMessage() {
+    alert("Login feature is in progress. This form currently demonstrates front-end validation.");
+    return false;
+}
+
+
+
+function registerMessage() {
+    alert("Profile form submitted! This demo shows front-end form validation.");
+    return false;
+}
 
 
 
