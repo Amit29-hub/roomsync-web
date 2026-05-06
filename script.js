@@ -8,6 +8,8 @@ function registerUser() {
     let budget = document.getElementById("budget").value;
     let cleanliness = document.getElementById("cleanliness").value;
     let schedule = document.getElementById("schedule").value;
+    let username = document.getElementById("newUsername").value;
+    let password = document.getElementById("newPassword").value;
 
     if (name === "" || email === "" || budget === "" || cleanliness === "" || schedule === "") {
         alert("Please complete all fields.");
