@@ -163,3 +163,15 @@ function saveMatch(name) {
 
     alert(name + " added to saved matches!");
 }
+
+
+
+function openProfile(name, details) {
+    document.getElementById("modalName").innerText = name;
+    document.getElementById("modalDetails").innerText = details;
+    document.getElementById("profileModal").style.display = "flex";
+}
+
+function closeProfile() {
+    document.getElementById("profileModal").style.display = "none";
+}
