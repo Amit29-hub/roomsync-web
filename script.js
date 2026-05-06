@@ -138,5 +138,9 @@ function updateHomePage() {
         document.getElementById("memberSection").style.display = "block";
     }
 }
-    }
+
+
+
+function showDemoMessage() {
+    alert("Demo message area: In a future version, users could chat with matched roommates here.");
 }
