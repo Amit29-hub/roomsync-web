@@ -144,3 +144,22 @@ function updateHomePage() {
 function showDemoMessage() {
     alert("Demo message area: In a future version, users could chat with matched roommates here.");
 }
+
+
+
+function saveMatch(name) {
+
+    let savedMatches = document.getElementById("savedMatches");
+
+    savedMatches.innerHTML +=
+
+        "<div class='saved-card'>" +
+
+            "<h3>" + name + "</h3>" +
+
+            "<p>Added to your saved roommate matches.</p>" +
+
+        "</div>";
+
+    alert(name + " added to saved matches!");
+}
