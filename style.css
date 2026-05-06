@@ -762,3 +762,90 @@ nav ul li a:hover::after {
 .message-card,
 .saved-card {
     background: rgba(255
+                     }
+
+/* RECOMMENDATION BANNER */
+
+.recommendation-banner {
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(10px);
+    border-left: 6px solid #2f6f4f;
+    max-width: 850px;
+    margin: 30px auto;
+    padding: 25px;
+    border-radius: 14px;
+    text-align: left;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+.recommendation-banner h2 {
+    color: #2f6f4f;
+    margin-bottom: 8px;
+}
+
+/* STATUS + TAGS */
+
+.status {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.online {
+    color: #2f6f4f;
+}
+
+.away {
+    color: #9a6a00;
+}
+
+.tag-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin: 12px 0;
+}
+
+.tag-row span {
+    background-color: #d9f5e5;
+    color: #2f6f4f;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 13px;
+}
+
+/* PROFILE MODAL */
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0,0,0,0.45);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.modal-content {
+    background: white;
+    max-width: 450px;
+    width: 100%;
+    padding: 30px;
+    border-radius: 16px;
+    position: relative;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+}
+
+.modal-content h2 {
+    color: #2f6f4f;
+    margin-bottom: 10px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: auto;
+    padding: 5px 10px;
+    border-radius: 50%;
+}
