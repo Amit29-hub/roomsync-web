@@ -4,28 +4,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search - RoomSync</title>
+
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
+
 <body>
 
     <nav>
         <h2>RoomSync</h2>
+
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="login.html">Login</a></li>
+            <li><a href="about.html">About</a></li>
             <li><a href="register.html">Register</a></li>
+            <li><a href="login.html">Login</a></li>
             <li><a href="search.html">Search</a></li>
         </ul>
     </nav>
 
-    <section class="search-box">
-        <h1>Search Roommates</h1>
-        <p>Find someone who matches your lifestyle and preferences.</p>
-        <input type="text" placeholder="Search by budget, pets, schedule...">
-        <br>
-        <button onclick="alert('Search feature coming soon!')">Search</button>
+    <section class="search-section">
+
+        <h1>Find Compatible Roommates</h1>
+
+        <p>
+            Search users based on lifestyle preferences and compatibility.
+        </p>
+
+        <div class="search-bar">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search by name or lifestyle..."
+                onkeyup="filterRoommates()"
+            >
+
+        </div>
+
+        <div class="roommate-grid" id="roommateGrid">
+
+            <div class="roommate-card">
+                <h3>Ana</h3>
+                <p>Budget: $900</p>
+                <p>Cleanliness: Very Clean</p>
+                <p>Schedule: Early Sleeper</p>
+            </div>
+
+            <div class="roommate-card">
+                <h3>Jordan</h3>
+                <p>Budget: $750</p>
+                <p>Cleanliness: Moderate</p>
+                <p>Schedule: Night Owl</p>
+            </div>
+
+            <div class="roommate-card">
+                <h3>Sophia</h3>
+                <p>Budget: $1100</p>
+                <p>Cleanliness: Very Clean</p>
+                <p>Schedule: Flexible</p>
+            </div>
+
+            <div class="roommate-card">
+                <h3>David</h3>
+                <p>Budget: $800</p>
+                <p>Cleanliness: Relaxed</p>
+                <p>Schedule: Night Owl</p>
+            </div>
+
+        </div>
+
     </section>
+
+    <footer>
+        <p>© 2026 RoomSync. Built for educational purposes.</p>
+    </footer>
 
 </body>
 </html>
