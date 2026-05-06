@@ -401,3 +401,86 @@ button {
 footer {
     margin-top: auto;
 }
+
+
+
+
+
+/* FLOATING HOME BACKGROUND */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before,
+.hero::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(47, 111, 79, 0.12);
+    z-index: 0;
+    animation: float 8s ease-in-out infinite;
+}
+
+.hero::before {
+    width: 220px;
+    height: 220px;
+    top: 80px;
+    left: 10%;
+}
+
+.hero::after {
+    width: 300px;
+    height: 300px;
+    bottom: 60px;
+    right: 10%;
+    animation-delay: 2s;
+}
+
+.hero-text {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-25px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* DASHBOARD */
+
+.large-card {
+    max-width: 600px;
+}
+
+.result-box {
+    margin-top: 25px;
+    background-color: #f4f7fb;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.result-box h3 {
+    color: #2f6f4f;
+    margin-bottom: 10px;
+}
+
+.logout-btn {
+    margin-top: 20px;
+    background-color: #555;
+}
+
+.logout-btn:hover {
+    background-color: #333;
+}
