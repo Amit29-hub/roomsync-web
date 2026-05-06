@@ -1,5 +1,5 @@
 function showMessage() {
-    alert("Welcome to RoomSync! Register or log in to complete your roommate compatibility quiz.");
+    window.location.href = "register.html";
 }
 
 function registerUser() {
