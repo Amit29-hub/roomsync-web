@@ -26,6 +26,8 @@ function registerUser() {
 
     localStorage.setItem("roomSyncName", name);
     localStorage.setItem("roomSyncEmail", email);
+    localStorage.setItem("roomSyncUsername", username);
+    localStorage.setItem("roomSyncPassword", password);
     localStorage.setItem("roomSyncBudget", budget);
     localStorage.setItem("roomSyncCleanliness", cleanliness);
     localStorage.setItem("roomSyncSchedule", schedule);
