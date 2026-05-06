@@ -118,3 +118,21 @@ function filterRoommates() {
         }
     }
 }
+
+
+
+
+function updateHomePage() {
+    let loggedIn = localStorage.getItem("roomSyncLoggedIn");
+    let name = localStorage.getItem("roomSyncName");
+
+    if (loggedIn === "true") {
+        document.getElementById("homeContent").innerHTML =
+            "<h1>Welcome back, " + name + "!</h1>" +
+            "<p>Your RoomSync profile is active. You can now explore matches, view notifications, and continue your compatibility quiz.</p>" +
+            "<div class='home-actions'>" +
+                "<button onclick=\"window.location.href='search.html'\">Search Roommates</button>" +
+                "<button onclick=\"window.location.href='dashboard.html'\">Go to Dashboard</button>" +
+            "</div>";
+    }
+}
