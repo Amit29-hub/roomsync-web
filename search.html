@@ -188,7 +188,45 @@
         <p id="modalDetails"></p>
     </div>
 </div>
-  </section>  
+  </section>
+
+    <div id="chatModal" class="modal">
+    <div class="modal-content chat-modal-content">
+
+        <button class="close-btn" onclick="closeChat()">×</button>
+
+        <div class="message-header">
+            <div class="profile-circle small-circle" id="chatInitial">A</div>
+
+            <div>
+                <h2 id="chatName">Ana</h2>
+                <p class="message-status">Online now</p>
+            </div>
+        </div>
+
+        <div class="chat-box" id="chatBox">
+            <div class="message received" id="firstMessage">
+                Hey! I saw we had a strong roommate match.
+            </div>
+
+            <div id="typingIndicator" class="typing-indicator">
+                Typing...
+            </div>
+        </div>
+
+        <div class="message-input-row">
+            <input
+                type="text"
+                id="messageInput"
+                placeholder="Type a message..."
+            >
+
+            <button onclick="sendMessage()">Send</button>
+        </div>
+
+    </div>
+</div>
+    
     <footer>
         <p>© 2026 RoomSync. Built By Amit Mukhram.</p>
     </footer>
