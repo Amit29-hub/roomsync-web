@@ -191,3 +191,62 @@ function toggleDarkMode() {
 if (localStorage.getItem("roomSyncDarkMode") === "on") {
     document.body.classList.add("dark-mode");
 }
+
+
+
+let currentChatName = "";
+
+function openChat(name) {
+    currentChatName = name;
+
+    document.getElementById("chatName").innerText = name;
+    document.getElementById("chatInitial").innerText = name.charAt(0);
+
+    document.getElementById("firstMessage").innerText =
+        "Hey! This is " + name + ". I saw we had a strong roommate match.";
+
+    document.getElementById("typingIndicator").style.display = "none";
+
+    document.getElementById("chatModal").style.display = "flex";
+}
+
+function closeChat() {
+    document.getElementById("chatModal").style.display = "none";
+}
+
+function sendMessage() {
+    let input = document.getElementById("messageInput");
+    let chatBox = document.getElementById("chatBox");
+    let typingIndicator = document.getElementById("typingIndicator");
+
+    let message = input.value.trim();
+
+    if (message === "") {
+        return;
+    }
+
+    chatBox.innerHTML +=
+        "<div class='message sent'>" +
+            message +
+        "</div>";
+
+    input.value = "";
+    chatBox.scrollTop = chatBox.scrollHeight;
+
+    setTimeout(function() {
+        typingIndicator.style.display = "block";
+        chatBox.appendChild(typingIndicator);
+        chatBox.scrollTop = chatBox.scrollHeight;
+    }, 500);
+
+    setTimeout(function() {
+        typingIndicator.style.display = "none";
+
+        chatBox.innerHTML +=
+            "<div class='message received'>" +
+                currentChatName + ": Sounds good! I would love to talk more about housing preferences." +
+            "</div>";
+
+        chatBox.scrollTop = chatBox.scrollHeight;
+    }, 1600);
+}
