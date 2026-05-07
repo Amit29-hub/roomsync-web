@@ -661,20 +661,33 @@ nav ul li a:hover::after {
 
 /* DARK MODE */
 
+/* DARK MODE */
+
 .theme-btn {
+
     background-color: white;
+
     color: #2f6f4f;
+
     padding: 8px 14px;
+
     font-size: 14px;
 }
 
 .dark-mode {
-    background: linear-gradient(135deg, #111827, #1f2937);
+
+    background: linear-gradient(
+        135deg,
+        #111827,
+        #1f2937
+    );
+
     color: #f4f7fb;
 }
 
 .dark-mode nav,
 .dark-mode footer {
+
     background-color: #111827;
 }
 
@@ -684,8 +697,12 @@ nav ul li a:hover::after {
 .dark-mode .roommate-card,
 .dark-mode .member-card,
 .dark-mode .message-card,
-.dark-mode .saved-card {
-    background: rgba(31, 41, 55, 0.85);
+.dark-mode .saved-card,
+.dark-mode .recommendation-banner,
+.dark-mode .modal-content {
+
+    background: rgba(31, 41, 55, 0.9);
+
     color: #f4f7fb;
 }
 
@@ -695,6 +712,7 @@ nav ul li a:hover::after {
 .dark-mode .hero h1,
 .dark-mode .page-header h1,
 .dark-mode .search-section h1 {
+
     color: #9ee6b7;
 }
 
@@ -702,15 +720,49 @@ nav ul li a:hover::after {
 .dark-mode .hero p,
 .dark-mode .page-header p,
 .dark-mode .search-section p,
-.dark-mode .form-intro {
+.dark-mode .form-intro,
+.dark-mode label {
+
     color: #d1d5db;
 }
 
 .dark-mode input,
 .dark-mode select {
+
     background-color: #111827;
+
     color: white;
+
     border: 1px solid #4b5563;
+}
+
+.dark-mode .chat-box,
+.dark-mode .result-box {
+
+    background-color: #111827;
+}
+
+.dark-mode .received,
+.dark-mode .typing-indicator {
+
+    background-color: #374151;
+
+    color: #f4f7fb;
+}
+
+.dark-mode .tag-row span,
+.dark-mode .match-percent {
+
+    background-color: #374151;
+
+    color: #9ee6b7;
+}
+
+.dark-mode .theme-btn {
+
+    background-color: #9ee6b7;
+
+    color: #111827;
 }
 
 /* PROFILE CIRCLES + COMPATIBILITY */
