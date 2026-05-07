@@ -901,3 +901,78 @@ nav ul li a:hover::after {
     padding: 5px 10px;
     border-radius: 50%;
 }
+
+
+
+.chat-modal-content {
+    max-width: 520px;
+}
+
+.message-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.small-circle {
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+}
+
+.message-status {
+    color: #2f6f4f;
+    font-size: 14px;
+}
+
+.chat-box {
+    background-color: #f4f7fb;
+    border-radius: 12px;
+    padding: 15px;
+    height: 260px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.message {
+    max-width: 75%;
+    padding: 12px 14px;
+    border-radius: 14px;
+    font-size: 14px;
+}
+
+.received {
+    background-color: #d9f5e5;
+    align-self: flex-start;
+}
+
+.sent {
+    background-color: #2f6f4f;
+    color: white;
+    align-self: flex-end;
+}
+
+.message-input-row {
+    display: flex;
+    gap: 10px;
+}
+
+.message-input-row input {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+.typing-indicator {
+    display: none;
+    align-self: flex-start;
+    font-size: 13px;
+    color: #555;
+    background-color: #eef4f0;
+    padding: 10px 12px;
+    border-radius: 14px;
+    font-style: italic;
+}
