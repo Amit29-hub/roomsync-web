@@ -253,11 +253,11 @@ function openChat(name) {
         "Hey! This is " + name + ". I saw we had a strong roommate match.";
 
     document.getElementById("typingIndicator").style.display = "none";
-    document.getElementById("chatModal").style.display = "flex";
+    document.getElementById("chatModal").classList.add("active");
 }
 
 function closeChat() {
-    document.getElementById("chatModal").style.display = "none";
+    document.getElementById("chatModal").classList.remove("active");
 }
 
 function sendMessage() {
