@@ -1072,3 +1072,12 @@ nav ul li a:hover::after {
 
     color: #9ee6b7;
 }
+
+
+
+/* FORCE MODALS TO STAY HIDDEN */
+
+#chatModal,
+#profileModal {
+    display: none;
+}
