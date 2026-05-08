@@ -218,14 +218,19 @@ function saveMatch(name) {
 }
 
 function openProfile(name, details) {
+
     document.getElementById("modalName").innerText = name;
+
     document.getElementById("modalDetails").innerText = details;
-    document.getElementById("profileModal").style.display = "flex";
+
+    document.getElementById("profileModal").classList.add("active");
 }
 
 function closeProfile() {
-    document.getElementById("profileModal").style.display = "none";
+
+    document.getElementById("profileModal").classList.remove("active");
 }
+
 
 let currentChatName = "";
 
