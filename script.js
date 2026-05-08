@@ -97,9 +97,10 @@ function saveQuiz() {
 
     showQuizResult();
 
-    alert("Your roommate preferences have been saved!");
+    alert("Your roommate preferences have been saved! You will now be directed to roommate matches.");
+window.location.href = "search.html";
 
-    return false;
+return false;
 }
 
 function loadQuizData() {
@@ -188,7 +189,23 @@ function showDemoMessage() {
     alert("Demo message area: In a future version, users could chat with matched roommates here.");
 }
 
+
+
 function saveMatch(name) {
+    let loggedIn = localStorage.getItem("roomSyncLoggedIn");
+
+    if (loggedIn !== "true") {
+        let choice = confirm("Please log in to save matches. If you do not have an account, you can register first. Go to login now?");
+
+        if (choice) {
+            window.location.href = "login.html";
+        } else {
+            window.location.href = "register.html";
+        }
+
+        return;
+    }
+
     let savedMatches = document.getElementById("savedMatches");
 
     savedMatches.innerHTML +=
@@ -213,6 +230,20 @@ function closeProfile() {
 let currentChatName = "";
 
 function openChat(name) {
+    let loggedIn = localStorage.getItem("roomSyncLoggedIn");
+
+    if (loggedIn !== "true") {
+        let choice = confirm("Please log in to message roommates. If you do not have an account, you can register first. Go to login now?");
+
+        if (choice) {
+            window.location.href = "login.html";
+        } else {
+            window.location.href = "register.html";
+        }
+
+        return;
+    }
+
     currentChatName = name;
 
     document.getElementById("chatName").innerText = name;
