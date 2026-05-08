@@ -5,24 +5,25 @@ function showMessage() {
 function registerUser() {
     let name = document.getElementById("fullname").value;
     let email = document.getElementById("email").value;
-    let budget = document.getElementById("budget").value;
-    let cleanliness = document.getElementById("cleanliness").value;
-    let schedule = document.getElementById("schedule").value;
     let username = document.getElementById("newUsername").value;
     let password = document.getElementById("newPassword").value;
 
-    if (
-    name === "" ||
-    email === "" ||
-    username === "" ||
-    password === "" ||
-    budget === "" ||
-    cleanliness === "" ||
-    schedule === ""
-) {
+    if (name === "" || email === "" || username === "" || password === "") {
         alert("Please complete all fields.");
         return false;
     }
+
+    localStorage.setItem("roomSyncName", name);
+    localStorage.setItem("roomSyncEmail", email);
+    localStorage.setItem("roomSyncUsername", username);
+    localStorage.setItem("roomSyncPassword", password);
+    localStorage.setItem("roomSyncLoggedIn", "true");
+
+    alert("Account created successfully! Please complete your roommate quiz.");
+    window.location.href = "dashboard.html";
+
+    return false;
+}
 
     localStorage.setItem("roomSyncName", name);
     localStorage.setItem("roomSyncEmail", email);
