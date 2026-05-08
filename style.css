@@ -1149,3 +1149,54 @@ nav ul li a:hover::after {
 [hidden] {
     display: none !important;
 }
+
+
+
+
+
+/* FINAL BACKGROUND MODE FIX */
+
+body {
+    background: linear-gradient(135deg, #f4f7fb, #edf7f0) !important;
+    color: #222 !important;
+}
+
+body.dark-mode {
+    background: linear-gradient(135deg, #111827, #1f2937) !important;
+    color: #f4f7fb !important;
+}
+
+body.dark-mode .hero,
+body.dark-mode .search-section,
+body.dark-mode .page-header,
+body.dark-mode .content-section,
+body.dark-mode .features,
+body.dark-mode .saved-section,
+body.dark-mode .message-section,
+body.dark-mode .form-container {
+    background: transparent !important;
+}
+
+body.dark-mode .hero h1,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3 {
+    color: #9ee6b7 !important;
+}
+
+body.dark-mode p,
+body.dark-mode label {
+    color: #d1d5db !important;
+}
+
+body:not(.dark-mode) .hero h1,
+body:not(.dark-mode) h1,
+body:not(.dark-mode) h2,
+body:not(.dark-mode) h3 {
+    color: #2f6f4f !important;
+}
+
+body:not(.dark-mode) p,
+body:not(.dark-mode) label {
+    color: #4b5563 !important;
+}
