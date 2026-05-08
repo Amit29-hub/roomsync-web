@@ -263,3 +263,47 @@ window.onload = function () {
         document.body.classList.add("dark-mode");
     }
 };
+
+
+
+function loadQuizData() {
+    let savedName = localStorage.getItem("quizName");
+    let savedCleanliness = localStorage.getItem("quizCleanliness");
+    let savedSchedule = localStorage.getItem("quizSchedule");
+    let savedGuests = localStorage.getItem("quizGuests");
+
+    if (savedName) {
+        document.getElementById("quizName").value = savedName;
+    }
+
+    if (savedCleanliness) {
+        document.getElementById("quizCleanliness").value = savedCleanliness;
+    }
+
+    if (savedSchedule) {
+        document.getElementById("quizSchedule").value = savedSchedule;
+    }
+
+    if (savedGuests) {
+        document.getElementById("quizGuests").value = savedGuests;
+    }
+
+    if (localStorage.getItem("quizCompleted") === "true") {
+        showQuizResult();
+    }
+}
+
+function showQuizResult() {
+    let name = localStorage.getItem("quizName");
+    let cleanliness = localStorage.getItem("quizCleanliness");
+    let schedule = localStorage.getItem("quizSchedule");
+    let guests = localStorage.getItem("quizGuests");
+
+    document.getElementById("quizResult").innerHTML =
+        "<h3>Your Saved Roommate Profile</h3>" +
+        "<p><strong>Name:</strong> " + name + "</p>" +
+        "<p><strong>Cleanliness:</strong> " + cleanliness + "</p>" +
+        "<p><strong>Schedule:</strong> " + schedule + "</p>" +
+        "<p><strong>Guests:</strong> " + guests + "</p>" +
+        "<p class='match-percent'>Quiz Completed</p>";
+}
