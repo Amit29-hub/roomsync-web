@@ -81,17 +81,20 @@ function saveQuiz() {
     let schedule = document.getElementById("quizSchedule").value;
     let guests = document.getElementById("quizGuests").value;
 
+    if (name === "" || cleanliness === "" || schedule === "" || guests === "") {
+        alert("Please complete all quiz questions.");
+        return false;
+    }
+
     localStorage.setItem("quizName", name);
     localStorage.setItem("quizCleanliness", cleanliness);
     localStorage.setItem("quizSchedule", schedule);
     localStorage.setItem("quizGuests", guests);
+    localStorage.setItem("quizCompleted", "true");
 
-    document.getElementById("quizResult").innerHTML =
-        "<h3>Preferences Saved!</h3>" +
-        "<p><strong>Name:</strong> " + name + "</p>" +
-        "<p><strong>Cleanliness:</strong> " + cleanliness + "</p>" +
-        "<p><strong>Schedule:</strong> " + schedule + "</p>" +
-        "<p><strong>Guests:</strong> " + guests + "</p>";
+    showQuizResult();
+
+    alert("Your roommate preferences have been saved!");
 
     return false;
 }
