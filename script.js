@@ -218,17 +218,16 @@ function saveMatch(name) {
 }
 
 function openProfile(name, details) {
-
     document.getElementById("modalName").innerText = name;
-
     document.getElementById("modalDetails").innerText = details;
 
+    document.getElementById("profileModal").hidden = false;
     document.getElementById("profileModal").classList.add("active");
 }
 
 function closeProfile() {
-
     document.getElementById("profileModal").classList.remove("active");
+    document.getElementById("profileModal").hidden = true;
 }
 
 
@@ -264,6 +263,7 @@ document.getElementById("chatModal").classList.add("active");
 
 function closeChat() {
     document.getElementById("chatModal").classList.remove("active");
+    document.getElementById("chatModal").hidden = true;
 }
 
 function sendMessage() {
