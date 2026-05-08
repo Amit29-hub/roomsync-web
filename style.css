@@ -1141,3 +1141,11 @@ nav ul li a:hover::after {
     background-color: rgba(0, 0, 0, 0.6);
     z-index: 9999;
 }
+
+
+
+
+
+[hidden] {
+    display: none !important;
+}
