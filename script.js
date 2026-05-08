@@ -250,3 +250,12 @@ function sendMessage() {
         chatBox.scrollTop = chatBox.scrollHeight;
     }, 1600);
 }
+
+
+window.onload = function () {
+
+    if (localStorage.getItem("roomSyncDarkMode") === "on") {
+
+        document.body.classList.add("dark-mode");
+    }
+};
