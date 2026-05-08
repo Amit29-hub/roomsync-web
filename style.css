@@ -1149,3 +1149,42 @@ nav ul li a:hover::after {
 [hidden] {
     display: none !important;
 }
+
+
+
+
+/* LIGHT MODE CONTRAST FIX */
+
+.hero h1,
+.page-header h1,
+.search-section h1 {
+    color: #2f6f4f;
+}
+
+.hero p,
+.page-header p,
+.search-section p {
+    color: #4b5563;
+}
+
+.hero-text {
+    color: #222;
+}
+
+/* DARK MODE CONTRAST FIX */
+
+.dark-mode .hero h1,
+.dark-mode .page-header h1,
+.dark-mode .search-section h1 {
+    color: #9ee6b7;
+}
+
+.dark-mode .hero p,
+.dark-mode .page-header p,
+.dark-mode .search-section p {
+    color: #d1d5db;
+}
+
+.dark-mode .hero-text {
+    color: #f4f7fb;
+}
