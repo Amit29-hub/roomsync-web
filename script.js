@@ -2,6 +2,26 @@ function showMessage() {
     window.location.href = "register.html";
 }
 
+function applyDarkMode() {
+    if (localStorage.getItem("roomSyncDarkMode") === "on") {
+        document.body.classList.add("dark-mode");
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    applyDarkMode();
+});
+
+function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+
+    if (document.body.classList.contains("dark-mode")) {
+        localStorage.setItem("roomSyncDarkMode", "on");
+    } else {
+        localStorage.setItem("roomSyncDarkMode", "off");
+    }
+}
+
 function registerUser() {
     let name = document.getElementById("fullname").value;
     let email = document.getElementById("email").value;
@@ -25,41 +45,18 @@ function registerUser() {
     return false;
 }
 
-    localStorage.setItem("roomSyncName", name);
-    localStorage.setItem("roomSyncEmail", email);
-    localStorage.setItem("roomSyncUsername", username);
-    localStorage.setItem("roomSyncPassword", password);
-    localStorage.setItem("roomSyncBudget", budget);
-    localStorage.setItem("roomSyncCleanliness", cleanliness);
-    localStorage.setItem("roomSyncSchedule", schedule);
-    localStorage.setItem("roomSyncLoggedIn", "true");
-
-    alert("Account created successfully! You will now go to your dashboard.");
-    window.location.href = "dashboard.html";
-
-    return false;
-}
-
 function loginUser() {
-
     let username = document.getElementById("username").value;
-
     let password = document.getElementById("password").value;
 
     let savedUsername = localStorage.getItem("roomSyncUsername");
-
     let savedPassword = localStorage.getItem("roomSyncPassword");
 
     if (username === savedUsername && password === savedPassword) {
-
         localStorage.setItem("roomSyncLoggedIn", "true");
-
         alert("Login successful!");
-
         window.location.href = "dashboard.html";
-
     } else {
-
         alert("Incorrect username or password.");
     }
 
@@ -73,6 +70,12 @@ function checkLogin() {
         alert("Please log in or register before accessing the dashboard.");
         window.location.href = "login.html";
     }
+}
+
+function logoutUser() {
+    localStorage.setItem("roomSyncLoggedIn", "false");
+    alert("You have been logged out.");
+    window.location.href = "index.html";
 }
 
 function saveQuiz() {
@@ -99,10 +102,50 @@ function saveQuiz() {
     return false;
 }
 
-function logoutUser() {
-    localStorage.setItem("roomSyncLoggedIn", "false");
-    alert("You have been logged out.");
-    window.location.href = "index.html";
+function loadQuizData() {
+    let savedName = localStorage.getItem("quizName");
+    let savedCleanliness = localStorage.getItem("quizCleanliness");
+    let savedSchedule = localStorage.getItem("quizSchedule");
+    let savedGuests = localStorage.getItem("quizGuests");
+
+    if (savedName && document.getElementById("quizName")) {
+        document.getElementById("quizName").value = savedName;
+    }
+
+    if (savedCleanliness && document.getElementById("quizCleanliness")) {
+        document.getElementById("quizCleanliness").value = savedCleanliness;
+    }
+
+    if (savedSchedule && document.getElementById("quizSchedule")) {
+        document.getElementById("quizSchedule").value = savedSchedule;
+    }
+
+    if (savedGuests && document.getElementById("quizGuests")) {
+        document.getElementById("quizGuests").value = savedGuests;
+    }
+
+    if (localStorage.getItem("quizCompleted") === "true") {
+        showQuizResult();
+    }
+}
+
+function showQuizResult() {
+    if (!document.getElementById("quizResult")) {
+        return;
+    }
+
+    let name = localStorage.getItem("quizName");
+    let cleanliness = localStorage.getItem("quizCleanliness");
+    let schedule = localStorage.getItem("quizSchedule");
+    let guests = localStorage.getItem("quizGuests");
+
+    document.getElementById("quizResult").innerHTML =
+        "<h3>Your Saved Roommate Profile</h3>" +
+        "<p><strong>Name:</strong> " + name + "</p>" +
+        "<p><strong>Cleanliness:</strong> " + cleanliness + "</p>" +
+        "<p><strong>Schedule:</strong> " + schedule + "</p>" +
+        "<p><strong>Guests:</strong> " + guests + "</p>" +
+        "<p class='match-percent'>Quiz Completed</p>";
 }
 
 function filterRoommates() {
@@ -112,7 +155,6 @@ function filterRoommates() {
 
     for (let i = 0; i < cards.length; i++) {
         let text = cards[i].innerText.toLowerCase();
-
         let keywords = cards[i].getAttribute("data-keywords").toLowerCase();
 
         if (text.includes(filter) || keywords.includes(filter)) {
@@ -123,14 +165,11 @@ function filterRoommates() {
     }
 }
 
-
-
-
 function updateHomePage() {
     let loggedIn = localStorage.getItem("roomSyncLoggedIn");
     let name = localStorage.getItem("roomSyncName");
 
-    if (loggedIn === "true") {
+    if (loggedIn === "true" && document.getElementById("homeContent")) {
         document.getElementById("homeContent").innerHTML =
             "<h1>Welcome back, " + name + "!</h1>" +
             "<p>Your RoomSync profile is active. You can now explore matches, view notifications, and continue your compatibility quiz.</p>" +
@@ -139,36 +178,27 @@ function updateHomePage() {
                 "<button onclick=\"window.location.href='dashboard.html'\">Go to Dashboard</button>" +
             "</div>";
 
-        document.getElementById("memberSection").style.display = "block";
+        if (document.getElementById("memberSection")) {
+            document.getElementById("memberSection").style.display = "block";
+        }
     }
 }
-
-
 
 function showDemoMessage() {
     alert("Demo message area: In a future version, users could chat with matched roommates here.");
 }
 
-
-
 function saveMatch(name) {
-
     let savedMatches = document.getElementById("savedMatches");
 
     savedMatches.innerHTML +=
-
         "<div class='saved-card'>" +
-
             "<h3>" + name + "</h3>" +
-
             "<p>Added to your saved roommate matches.</p>" +
-
         "</div>";
 
     alert(name + " added to saved matches!");
 }
-
-
 
 function openProfile(name, details) {
     document.getElementById("modalName").innerText = name;
@@ -179,24 +209,6 @@ function openProfile(name, details) {
 function closeProfile() {
     document.getElementById("profileModal").style.display = "none";
 }
-
-
-
-function toggleDarkMode() {
-    document.body.classList.toggle("dark-mode");
-
-    if (document.body.classList.contains("dark-mode")) {
-        localStorage.setItem("roomSyncDarkMode", "on");
-    } else {
-        localStorage.setItem("roomSyncDarkMode", "off");
-    }
-}
-
-if (localStorage.getItem("roomSyncDarkMode") === "on") {
-    document.body.classList.add("dark-mode");
-}
-
-
 
 let currentChatName = "";
 
@@ -210,7 +222,6 @@ function openChat(name) {
         "Hey! This is " + name + ". I saw we had a strong roommate match.";
 
     document.getElementById("typingIndicator").style.display = "none";
-
     document.getElementById("chatModal").style.display = "flex";
 }
 
@@ -253,57 +264,4 @@ function sendMessage() {
 
         chatBox.scrollTop = chatBox.scrollHeight;
     }, 1600);
-}
-
-
-window.onload = function () {
-
-    if (localStorage.getItem("roomSyncDarkMode") === "on") {
-
-        document.body.classList.add("dark-mode");
-    }
-};
-
-
-
-function loadQuizData() {
-    let savedName = localStorage.getItem("quizName");
-    let savedCleanliness = localStorage.getItem("quizCleanliness");
-    let savedSchedule = localStorage.getItem("quizSchedule");
-    let savedGuests = localStorage.getItem("quizGuests");
-
-    if (savedName) {
-        document.getElementById("quizName").value = savedName;
-    }
-
-    if (savedCleanliness) {
-        document.getElementById("quizCleanliness").value = savedCleanliness;
-    }
-
-    if (savedSchedule) {
-        document.getElementById("quizSchedule").value = savedSchedule;
-    }
-
-    if (savedGuests) {
-        document.getElementById("quizGuests").value = savedGuests;
-    }
-
-    if (localStorage.getItem("quizCompleted") === "true") {
-        showQuizResult();
-    }
-}
-
-function showQuizResult() {
-    let name = localStorage.getItem("quizName");
-    let cleanliness = localStorage.getItem("quizCleanliness");
-    let schedule = localStorage.getItem("quizSchedule");
-    let guests = localStorage.getItem("quizGuests");
-
-    document.getElementById("quizResult").innerHTML =
-        "<h3>Your Saved Roommate Profile</h3>" +
-        "<p><strong>Name:</strong> " + name + "</p>" +
-        "<p><strong>Cleanliness:</strong> " + cleanliness + "</p>" +
-        "<p><strong>Schedule:</strong> " + schedule + "</p>" +
-        "<p><strong>Guests:</strong> " + guests + "</p>" +
-        "<p class='match-percent'>Quiz Completed</p>";
 }
