@@ -1116,3 +1116,28 @@ nav ul li a:hover::after {
     background-color: rgba(0, 0, 0, 0.6);
     z-index: 9999;
 }
+
+
+
+/* FINAL MODAL FIX - HIDE POPUPS UNTIL CLICKED */
+
+#chatModal:not(.active),
+#profileModal:not(.active) {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    overflow: hidden !important;
+}
+
+#chatModal.active,
+#profileModal.active {
+    display: flex !important;
+    visibility: visible !important;
+    height: auto !important;
+    position: fixed;
+    inset: 0;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 9999;
+}
