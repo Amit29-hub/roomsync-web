@@ -12,19 +12,13 @@ document.addEventListener("DOMContentLoaded", function () {
     applyDarkMode();
 });
 
-function toggleDarkMode() {
+function toggleDarkMode() {document.body.classList.toggle("dark-mode");
 
-    document.documentElement.classList.toggle("dark-mode");
-    document.body.classList.toggle("dark-mode");
-
-    if (document.documentElement.classList.contains("dark-mode")) {
-
-        localStorage.setItem("roomSyncDarkMode", "on");
-
-    } else {
-
-        localStorage.setItem("roomSyncDarkMode", "off");
-    }
+if (document.body.classList.contains("dark-mode")) {
+    localStorage.setItem("roomSyncDarkMode", "on");
+} else {
+    localStorage.setItem("roomSyncDarkMode", "off");
+}
 }
 
 function registerUser() {
