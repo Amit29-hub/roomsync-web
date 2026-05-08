@@ -258,7 +258,8 @@ function openChat(name) {
         "Hey! This is " + name + ". I saw we had a strong roommate match.";
 
     document.getElementById("typingIndicator").style.display = "none";
-    document.getElementById("chatModal").classList.add("active");
+    document.getElementById("chatModal").hidden = false;
+document.getElementById("chatModal").classList.add("active");
 }
 
 function closeChat() {
