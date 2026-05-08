@@ -1097,3 +1097,22 @@ nav ul li a:hover::after {
 #chatModal.active {
     display: flex;
 }
+
+
+
+
+/* FINAL CHAT VISIBILITY FIX */
+
+#chatModal {
+    display: none !important;
+}
+
+#chatModal.active {
+    display: flex !important;
+    position: fixed;
+    inset: 0;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 9999;
+}
